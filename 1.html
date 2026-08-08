@@ -383,26 +383,6 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
 .lightbox-close:hover{background:var(--accent);border-color:var(--accent);}
 
 /* ============================= */
-/* CERT SCROLL MODAL              */
-/* (separate from the lightbox above — vertical scroll, not carousel) */
-/* ============================= */
-.cert-scroll-trigger{cursor:pointer;}
-.cert-scroll-overlay{position:fixed;inset:0;background:rgba(5,5,7,0.92);backdrop-filter:blur(6px);z-index:2000;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;padding:40px;}
-.cert-scroll-overlay.active{opacity:1;visibility:visible;}
-.cert-scroll-panel{position:relative;width:100%;max-width:520px;max-height:85vh;background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:26px;display:flex;flex-direction:column;transform:scale(.92);transition:transform .3s ease;}
-.cert-scroll-overlay.active .cert-scroll-panel{transform:scale(1);}
-.cert-scroll-header{flex:0 0 auto;margin-bottom:16px;padding-right:36px;}
-.cert-scroll-header h3{font-family:var(--font-heading);font-weight:600;font-size:1.1rem;margin-bottom:4px;}
-.cert-scroll-header span{font-size:.8rem;color:var(--text-muted);}
-.cert-scroll-list{flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column;gap:20px;padding-right:6px;scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--bg-elevated) transparent;}
-.cert-scroll-list::-webkit-scrollbar{width:8px;}
-.cert-scroll-list::-webkit-scrollbar-track{background:transparent;}
-.cert-scroll-list::-webkit-scrollbar-thumb{background:var(--bg-elevated);border-radius:10px;}
-.cert-scroll-item{position:relative;flex-shrink:0;}
-.cert-scroll-item .img-slot{border-radius:var(--radius-md);}
-.cert-scroll-num{position:absolute;top:10px;right:10px;background:rgba(5,5,7,0.72);color:#fff;font-size:.72rem;font-weight:600;padding:4px 10px;border-radius:999px;z-index:2;}
-
-/* ============================= */
 /* RESPONSIVE                     */
 /* ============================= */
 @media (max-width:1024px){
@@ -442,8 +422,6 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
   .lightbox-title{font-size:.95rem;margin-top:16px;}
   .lightbox-thumbs{margin-top:12px;gap:8px;}
   .lightbox-thumb{width:46px;}
-  .cert-scroll-overlay{padding:20px;}
-  .cert-scroll-panel{padding:20px;max-height:80vh;}
 }
 </style>
 </head>
@@ -864,7 +842,7 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
   <section>
     <h2 class="section-title reveal">Certifications</h2>
     <div class="cert-grid" style="margin-top:36px;">
-      <div class="cert-card cert-scroll-trigger reveal" id="csNciiCard" data-title="Computer System Servicing NC II">
+      <div class="cert-card lightbox-trigger reveal" data-gallery="certifications" data-title="Computer System Servicing NC II">
         <div class="img-slot ratio-portrait">
           <img src="images/Computer_System_Servicing_NC_II_1.jpg" alt="Computer System Servicing NC II" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
           <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
@@ -989,57 +967,6 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
       <button class="lightbox-ctrl" id="lightboxNext" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
     <div class="lightbox-hint">&larr; &rarr; keys or swipe &bull; Play to auto-browse</div>
-  </div>
-</div>
-
-<!-- ============================= -->
-<!-- CERT SCROLL MODAL (Computer System Servicing NC II) -->
-<!-- Separate from the lightbox above: not part of the "certifications" gallery group -->
-<!-- ============================= -->
-<div class="cert-scroll-overlay" id="certScrollOverlay">
-  <div class="cert-scroll-panel" role="dialog" aria-modal="true" aria-label="Computer System Servicing NC II certificates">
-    <button class="lightbox-close" id="certScrollClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-    <div class="cert-scroll-header">
-      <h3>Computer System Servicing NC II</h3>
-      <span>Scroll to view all 5 certificates</span>
-    </div>
-    <div class="cert-scroll-list">
-      <div class="cert-scroll-item">
-        <div class="img-slot ratio-portrait">
-          <img src="images/Computer_System_Servicing_NC_II_1.jpg" alt="Computer System Servicing NC II certificate 1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
-        </div>
-        <span class="cert-scroll-num">1 / 5</span>
-      </div>
-      <div class="cert-scroll-item">
-        <div class="img-slot ratio-portrait">
-          <img src="images/Computer_System_Servicing_NC_II_2.jpg" alt="Computer System Servicing NC II certificate 2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
-        </div>
-        <span class="cert-scroll-num">2 / 5</span>
-      </div>
-      <div class="cert-scroll-item">
-        <div class="img-slot ratio-portrait">
-          <img src="images/Computer_System_Servicing_NC_II_3.jpg" alt="Computer System Servicing NC II certificate 3" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
-        </div>
-        <span class="cert-scroll-num">3 / 5</span>
-      </div>
-      <div class="cert-scroll-item">
-        <div class="img-slot ratio-portrait">
-          <img src="images/Computer_System_Servicing_NC_II_4.jpg" alt="Computer System Servicing NC II certificate 4" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
-        </div>
-        <span class="cert-scroll-num">4 / 5</span>
-      </div>
-      <div class="cert-scroll-item">
-        <div class="img-slot ratio-portrait">
-          <img src="images/Computer_System_Servicing_NC_II_5.jpg" alt="Computer System Servicing NC II certificate 5" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
-        </div>
-        <span class="cert-scroll-num">5 / 5</span>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -1302,29 +1229,6 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
       if (dx < 0) lbNext(); else lbPrev();
     }
   }, { passive: true });
-
-  /* ---- Cert scroll modal (Computer System Servicing NC II) ----
-     Standalone from the lightbox above: its own open/close logic,
-     no gallery grouping, no prev/next — just a vertically scrollable
-     stack of certificates. ---- */
-  var certScrollOverlay = document.getElementById('certScrollOverlay');
-  var certScrollClose = document.getElementById('certScrollClose');
-  var csNciiCard = document.getElementById('csNciiCard');
-
-  function csOpen(){
-    certScrollOverlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-  function csClose(){
-    certScrollOverlay.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-  if (csNciiCard) { csNciiCard.addEventListener('click', csOpen); }
-  certScrollClose.addEventListener('click', csClose);
-  certScrollOverlay.addEventListener('click', function(e){ if (e.target === certScrollOverlay) csClose(); });
-  document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape' && certScrollOverlay.classList.contains('active')) csClose();
-  });
 
   /* ---- Footer year ---- */
   document.getElementById('year').textContent = new Date().getFullYear();
