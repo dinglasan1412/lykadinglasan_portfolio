@@ -290,6 +290,8 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
 .cert-card-body{padding:20px;}
 .cert-card-body h3{font-size:1rem;margin-bottom:8px;}
 .cert-card-body span{font-size:.8rem;color:var(--text-muted);}
+.cert-scroll-trigger{align-self:start;}
+.cert-scroll-trigger .img-slot img{object-fit:contain;}
 
 /* ============================= */
 /* TIMELINE                       */
@@ -362,23 +364,8 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
 .lightbox.active .lightbox-inner{transform:scale(1);}
 .lightbox-content{width:100%;border-radius:var(--radius-lg);overflow:hidden;}
 .lightbox-content .img-slot{border-radius:var(--radius-lg);aspect-ratio:4/3;}
-.lightbox-thumbs{display:flex;gap:10px;width:100%;overflow-x:auto;overflow-y:hidden;padding:6px 2px 10px;margin-top:16px;scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--bg-elevated) transparent;}
-.lightbox-thumbs::-webkit-scrollbar{height:6px;}
-.lightbox-thumbs::-webkit-scrollbar-track{background:transparent;}
-.lightbox-thumbs::-webkit-scrollbar-thumb{background:var(--bg-elevated);border-radius:10px;}
-.lightbox-thumb{position:relative;flex:0 0 auto;width:58px;aspect-ratio:1/1;border-radius:8px;overflow:hidden;border:2px solid transparent;opacity:.5;background:var(--bg-elevated);transition:var(--transition);}
-.lightbox-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
-.lightbox-thumb i{display:none;align-items:center;justify-content:center;position:absolute;inset:0;font-size:1rem;color:var(--text-muted);}
-.lightbox-thumb.thumb-fallback i{display:flex;}
-.lightbox-thumb:hover{opacity:.8;}
-.lightbox-thumb.active{opacity:1;border-color:var(--accent);}
 .lightbox-title{margin-top:22px;font-family:var(--font-heading);font-weight:600;font-size:1.05rem;color:var(--text-primary);text-align:center;padding:0 12px;}
 .lightbox-counter{margin-top:5px;font-size:.82rem;color:var(--text-muted);}
-.lightbox-controls{display:flex;align-items:center;gap:18px;margin-top:20px;}
-.lightbox-ctrl{width:46px;height:46px;border-radius:50%;background:var(--bg-elevated);border:1px solid var(--border-color);display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--text-primary);transition:var(--transition);}
-.lightbox-ctrl:hover{background:var(--accent);border-color:var(--accent);}
-.lightbox-play.is-playing{background:var(--accent);border-color:var(--accent);}
-.lightbox-hint{margin-top:16px;font-size:.76rem;color:var(--text-muted);text-align:center;}
 .lightbox-close{position:absolute;top:28px;right:32px;width:46px;height:46px;border-radius:50%;background:var(--bg-elevated);border:1px solid var(--border-color);display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--text-primary);transition:var(--transition);z-index:2;}
 .lightbox-close:hover{background:var(--accent);border-color:var(--accent);}
 
@@ -400,6 +387,7 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
 .cert-scroll-list::-webkit-scrollbar-thumb{background:var(--bg-elevated);border-radius:10px;}
 .cert-scroll-item{position:relative;flex-shrink:0;}
 .cert-scroll-item .img-slot{border-radius:var(--radius-md);}
+.cert-scroll-item .img-slot img{object-fit:contain;}
 .cert-scroll-num{position:absolute;top:10px;right:10px;background:rgba(5,5,7,0.72);color:#fff;font-size:.72rem;font-weight:600;padding:4px 10px;border-radius:999px;z-index:2;}
 
 /* ============================= */
@@ -438,10 +426,7 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
   .timeline-dot{width:38px;height:38px;font-size:.9rem;}
   .lightbox{padding:20px;}
   .lightbox-close{top:16px;right:16px;width:40px;height:40px;}
-  .lightbox-controls{gap:12px;margin-top:16px;}
   .lightbox-title{font-size:.95rem;margin-top:16px;}
-  .lightbox-thumbs{margin-top:12px;gap:8px;}
-  .lightbox-thumb{width:46px;}
   .cert-scroll-overlay{padding:20px;}
   .cert-scroll-panel{padding:20px;max-height:80vh;}
 }
@@ -865,7 +850,7 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
     <h2 class="section-title reveal">Certifications</h2>
     <div class="cert-grid" style="margin-top:36px;">
       <div class="cert-card cert-scroll-trigger reveal" id="csNciiCard" data-title="Computer System Servicing NC II">
-        <div class="img-slot ratio-portrait">
+        <div class="img-slot ratio-landscape">
           <img src="images/Computer_System_Servicing_NC_II_1.jpg" alt="Computer System Servicing NC II" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
           <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
         </div>
@@ -874,9 +859,9 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
           <span>Issued: August 2026</span>
         </div>
       </div>
-      <div class="cert-card lightbox-trigger reveal reveal-delay-1" data-gallery="certifications" data-title="Innovative Capstone Project">
-        <div class="img-slot ratio-portrait">
-          <img src="images/cert-capstone.jpg" alt="Innovative Capstone Project certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="cert-card cert-scroll-trigger reveal reveal-delay-1" id="capstoneCard" data-title="Innovative Capstone Project">
+        <div class="img-slot ratio-landscape">
+          <img src="images/Computer_System_Servicing_NC_II_1.jpg" alt="Innovative Capstone Project" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
           <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
         </div>
         <div class="cert-card-body">
@@ -884,9 +869,9 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
           <span>Issued: May 2026</span>
         </div>
       </div>
-      <div class="cert-card lightbox-trigger reveal reveal-delay-2" data-gallery="certifications" data-title="Programming Prodigy Award">
-        <div class="img-slot ratio-portrait">
-          <img src="images/cert-prodigy.jpg" alt="Programming Prodigy Award certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="cert-card cert-scroll-trigger reveal reveal-delay-2" id="prodigyCard" data-title="Programming Prodigy Award">
+        <div class="img-slot ratio-landscape">
+          <img src="images/Computer_System_Servicing_NC_II_1.jpg" alt="Programming Prodigy Award" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
           <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
         </div>
         <div class="cert-card-body">
@@ -980,15 +965,8 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
   <button class="lightbox-close" id="lightboxClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
   <div class="lightbox-inner">
     <div class="lightbox-content" id="lightboxContent"></div>
-    <div class="lightbox-thumbs" id="lightboxThumbs"></div>
     <div class="lightbox-title" id="lightboxTitle"></div>
     <div class="lightbox-counter" id="lightboxCounter"></div>
-    <div class="lightbox-controls">
-      <button class="lightbox-ctrl" id="lightboxPrev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
-      <button class="lightbox-ctrl lightbox-play" id="lightboxPlay" aria-label="Play slideshow"><i class="fa-solid fa-play"></i></button>
-      <button class="lightbox-ctrl" id="lightboxNext" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
-    </div>
-    <div class="lightbox-hint">&larr; &rarr; keys or swipe &bull; Play to auto-browse</div>
   </div>
 </div>
 
@@ -1005,36 +983,140 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
     </div>
     <div class="cert-scroll-list">
       <div class="cert-scroll-item">
-        <div class="img-slot ratio-portrait">
+        <div class="img-slot ratio-landscape">
           <img src="images/Computer_System_Servicing_NC_II_1.jpg" alt="Computer System Servicing NC II certificate 1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
           <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
         </div>
         <span class="cert-scroll-num">1 / 5</span>
       </div>
       <div class="cert-scroll-item">
-        <div class="img-slot ratio-portrait">
+        <div class="img-slot ratio-landscape">
           <img src="images/Computer_System_Servicing_NC_II_2.jpg" alt="Computer System Servicing NC II certificate 2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
           <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
         </div>
         <span class="cert-scroll-num">2 / 5</span>
       </div>
       <div class="cert-scroll-item">
-        <div class="img-slot ratio-portrait">
+        <div class="img-slot ratio-landscape">
           <img src="images/Computer_System_Servicing_NC_II_3.jpg" alt="Computer System Servicing NC II certificate 3" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
           <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
         </div>
         <span class="cert-scroll-num">3 / 5</span>
       </div>
       <div class="cert-scroll-item">
-        <div class="img-slot ratio-portrait">
+        <div class="img-slot ratio-landscape">
           <img src="images/Computer_System_Servicing_NC_II_4.jpg" alt="Computer System Servicing NC II certificate 4" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
           <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
         </div>
         <span class="cert-scroll-num">4 / 5</span>
       </div>
       <div class="cert-scroll-item">
-        <div class="img-slot ratio-portrait">
+        <div class="img-slot ratio-landscape">
           <img src="images/Computer_System_Servicing_NC_II_5.jpg" alt="Computer System Servicing NC II certificate 5" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+        </div>
+        <span class="cert-scroll-num">5 / 5</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================= -->
+<!-- CERT SCROLL MODAL (Innovative Capstone Project) -->
+<!-- Placeholder content: reuses the Computer System Servicing NC II images -->
+<!-- until real Innovative Capstone Project certificate images are ready -->
+<!-- ============================= -->
+<div class="cert-scroll-overlay" id="capstoneScrollOverlay">
+  <div class="cert-scroll-panel" role="dialog" aria-modal="true" aria-label="Innovative Capstone Project certificates">
+    <button class="lightbox-close" id="capstoneScrollClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <div class="cert-scroll-header">
+      <h3>Innovative Capstone Project</h3>
+      <span>Placeholder images — scroll to preview the layout</span>
+    </div>
+    <div class="cert-scroll-list">
+      <div class="cert-scroll-item">
+        <div class="img-slot ratio-landscape">
+          <img src="images/Computer_System_Servicing_NC_II_1.jpg" alt="Placeholder certificate 1 for Innovative Capstone Project" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+        </div>
+        <span class="cert-scroll-num">1 / 5</span>
+      </div>
+      <div class="cert-scroll-item">
+        <div class="img-slot ratio-landscape">
+          <img src="images/Computer_System_Servicing_NC_II_2.jpg" alt="Placeholder certificate 2 for Innovative Capstone Project" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+        </div>
+        <span class="cert-scroll-num">2 / 5</span>
+      </div>
+      <div class="cert-scroll-item">
+        <div class="img-slot ratio-landscape">
+          <img src="images/Computer_System_Servicing_NC_II_3.jpg" alt="Placeholder certificate 3 for Innovative Capstone Project" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+        </div>
+        <span class="cert-scroll-num">3 / 5</span>
+      </div>
+      <div class="cert-scroll-item">
+        <div class="img-slot ratio-landscape">
+          <img src="images/Computer_System_Servicing_NC_II_4.jpg" alt="Placeholder certificate 4 for Innovative Capstone Project" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+        </div>
+        <span class="cert-scroll-num">4 / 5</span>
+      </div>
+      <div class="cert-scroll-item">
+        <div class="img-slot ratio-landscape">
+          <img src="images/Computer_System_Servicing_NC_II_5.jpg" alt="Placeholder certificate 5 for Innovative Capstone Project" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+        </div>
+        <span class="cert-scroll-num">5 / 5</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================= -->
+<!-- CERT SCROLL MODAL (Programming Prodigy Award) -->
+<!-- Placeholder content: reuses the Computer System Servicing NC II images -->
+<!-- until real Programming Prodigy Award certificate images are ready -->
+<!-- ============================= -->
+<div class="cert-scroll-overlay" id="prodigyScrollOverlay">
+  <div class="cert-scroll-panel" role="dialog" aria-modal="true" aria-label="Programming Prodigy Award certificates">
+    <button class="lightbox-close" id="prodigyScrollClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <div class="cert-scroll-header">
+      <h3>Programming Prodigy Award</h3>
+      <span>Placeholder images — scroll to preview the layout</span>
+    </div>
+    <div class="cert-scroll-list">
+      <div class="cert-scroll-item">
+        <div class="img-slot ratio-landscape">
+          <img src="images/Computer_System_Servicing_NC_II_1.jpg" alt="Placeholder certificate 1 for Programming Prodigy Award" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+        </div>
+        <span class="cert-scroll-num">1 / 5</span>
+      </div>
+      <div class="cert-scroll-item">
+        <div class="img-slot ratio-landscape">
+          <img src="images/Computer_System_Servicing_NC_II_2.jpg" alt="Placeholder certificate 2 for Programming Prodigy Award" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+        </div>
+        <span class="cert-scroll-num">2 / 5</span>
+      </div>
+      <div class="cert-scroll-item">
+        <div class="img-slot ratio-landscape">
+          <img src="images/Computer_System_Servicing_NC_II_3.jpg" alt="Placeholder certificate 3 for Programming Prodigy Award" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+        </div>
+        <span class="cert-scroll-num">3 / 5</span>
+      </div>
+      <div class="cert-scroll-item">
+        <div class="img-slot ratio-landscape">
+          <img src="images/Computer_System_Servicing_NC_II_4.jpg" alt="Placeholder certificate 4 for Programming Prodigy Award" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+        </div>
+        <span class="cert-scroll-num">4 / 5</span>
+      </div>
+      <div class="cert-scroll-item">
+        <div class="img-slot ratio-landscape">
+          <img src="images/Computer_System_Servicing_NC_II_5.jpg" alt="Placeholder certificate 5 for Programming Prodigy Award" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
           <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
         </div>
         <span class="cert-scroll-num">5 / 5</span>
@@ -1200,37 +1282,12 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
   var lightboxTitle = document.getElementById('lightboxTitle');
   var lightboxCounter = document.getElementById('lightboxCounter');
   var lightboxClose = document.getElementById('lightboxClose');
-  var lightboxPrev = document.getElementById('lightboxPrev');
-  var lightboxNext = document.getElementById('lightboxNext');
-  var lightboxPlay = document.getElementById('lightboxPlay');
-  var lightboxThumbs = document.getElementById('lightboxThumbs');
 
   var lbGroup = [];
   var lbIndex = 0;
-  var lbTimer = null;
-  var AUTOPLAY_MS = 2500;
 
   function lbGroupItems(name){
     return Array.prototype.slice.call(document.querySelectorAll('.lightbox-trigger[data-gallery="' + name + '"]'));
-  }
-  function lbBuildThumbs(){
-    lightboxThumbs.innerHTML = '';
-    if (lbGroup.length < 2) { lightboxThumbs.style.display = 'none'; return; }
-    lightboxThumbs.style.display = 'flex';
-    lbGroup.forEach(function(item, i){
-      var img = item.querySelector('.img-slot img');
-      var src = img ? img.getAttribute('src') : '';
-      var placeholderIcon = item.querySelector('.img-placeholder i');
-      var iconClass = placeholderIcon ? placeholderIcon.className : 'fa-solid fa-image';
-      var label = item.getAttribute('data-title') || ('Item ' + (i + 1));
-      var thumb = document.createElement('button');
-      thumb.type = 'button';
-      thumb.className = 'lightbox-thumb';
-      thumb.setAttribute('aria-label', label);
-      thumb.innerHTML = '<img src="' + src + '" alt="" onerror="this.style.display=\'none\';this.parentElement.classList.add(\'thumb-fallback\');"><i class="' + iconClass + '"></i>';
-      thumb.addEventListener('click', function(){ lbStopAutoplay(); lbShow(i); });
-      lightboxThumbs.appendChild(thumb);
-    });
   }
   function lbShow(index){
     if (!lbGroup.length) return;
@@ -1240,31 +1297,11 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
     lightboxContent.innerHTML = slot ? slot.outerHTML : '';
     lightboxTitle.textContent = item.getAttribute('data-title') || '';
     lightboxCounter.textContent = (lbIndex + 1) + ' of ' + lbGroup.length;
-    var thumbEls = lightboxThumbs.children;
-    for (var i = 0; i < thumbEls.length; i++) {
-      thumbEls[i].classList.toggle('active', i === lbIndex);
-    }
-    var activeThumb = thumbEls[lbIndex];
-    if (activeThumb && activeThumb.scrollIntoView) {
-      activeThumb.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-    }
   }
   function lbNext(){ lbShow(lbIndex + 1); }
   function lbPrev(){ lbShow(lbIndex - 1); }
-  function lbStopAutoplay(){
-    clearInterval(lbTimer);
-    lbTimer = null;
-    lightboxPlay.innerHTML = '<i class="fa-solid fa-play"></i>';
-    lightboxPlay.classList.remove('is-playing');
-  }
-  function lbStartAutoplay(){
-    lightboxPlay.innerHTML = '<i class="fa-solid fa-pause"></i>';
-    lightboxPlay.classList.add('is-playing');
-    lbTimer = setInterval(lbNext, AUTOPLAY_MS);
-  }
   function lbOpen(name, index){
     lbGroup = lbGroupItems(name);
-    lbBuildThumbs();
     lbShow(index);
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -1272,7 +1309,6 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
   function lbClose(){
     lightbox.classList.remove('active');
     document.body.style.overflow = '';
-    lbStopAutoplay();
   }
 
   document.querySelectorAll('.lightbox-trigger').forEach(function(item){
@@ -1283,48 +1319,50 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
     });
   });
   lightboxClose.addEventListener('click', lbClose);
-  lightboxNext.addEventListener('click', function(){ lbStopAutoplay(); lbNext(); });
-  lightboxPrev.addEventListener('click', function(){ lbStopAutoplay(); lbPrev(); });
-  lightboxPlay.addEventListener('click', function(){ if (lbTimer) { lbStopAutoplay(); } else { lbStartAutoplay(); } });
   lightbox.addEventListener('click', function(e){ if (e.target === lightbox) lbClose(); });
   document.addEventListener('keydown', function(e){
     if (!lightbox.classList.contains('active')) return;
     if (e.key === 'Escape') lbClose();
-    else if (e.key === 'ArrowRight') { lbStopAutoplay(); lbNext(); }
-    else if (e.key === 'ArrowLeft') { lbStopAutoplay(); lbPrev(); }
+    else if (e.key === 'ArrowRight') { lbNext(); }
+    else if (e.key === 'ArrowLeft') { lbPrev(); }
   });
   var lbTouchStartX = 0;
   lightbox.addEventListener('touchstart', function(e){ lbTouchStartX = e.changedTouches[0].screenX; }, { passive: true });
   lightbox.addEventListener('touchend', function(e){
     var dx = e.changedTouches[0].screenX - lbTouchStartX;
     if (Math.abs(dx) > 40) {
-      lbStopAutoplay();
       if (dx < 0) lbNext(); else lbPrev();
     }
   }, { passive: true });
 
-  /* ---- Cert scroll modal (Computer System Servicing NC II) ----
-     Standalone from the lightbox above: its own open/close logic,
+  /* ---- Cert scroll modals (Computer System Servicing NC II, Innovative
+     Capstone Project, Programming Prodigy Award) ----
+     Standalone from the lightbox above: each card gets its own popup,
      no gallery grouping, no prev/next — just a vertically scrollable
      stack of certificates. ---- */
-  var certScrollOverlay = document.getElementById('certScrollOverlay');
-  var certScrollClose = document.getElementById('certScrollClose');
-  var csNciiCard = document.getElementById('csNciiCard');
-
-  function csOpen(){
-    certScrollOverlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
+  function initCertScroll(triggerId, overlayId, closeId){
+    var trigger = document.getElementById(triggerId);
+    var overlay = document.getElementById(overlayId);
+    var closeBtn = document.getElementById(closeId);
+    if (!trigger || !overlay || !closeBtn) return;
+    function open(){
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function close(){
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    trigger.addEventListener('click', open);
+    closeBtn.addEventListener('click', close);
+    overlay.addEventListener('click', function(e){ if (e.target === overlay) close(); });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && overlay.classList.contains('active')) close();
+    });
   }
-  function csClose(){
-    certScrollOverlay.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-  if (csNciiCard) { csNciiCard.addEventListener('click', csOpen); }
-  certScrollClose.addEventListener('click', csClose);
-  certScrollOverlay.addEventListener('click', function(e){ if (e.target === certScrollOverlay) csClose(); });
-  document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape' && certScrollOverlay.classList.contains('active')) csClose();
-  });
+  initCertScroll('csNciiCard', 'certScrollOverlay', 'certScrollClose');
+  initCertScroll('capstoneCard', 'capstoneScrollOverlay', 'capstoneScrollClose');
+  initCertScroll('prodigyCard', 'prodigyScrollOverlay', 'prodigyScrollClose');
 
   /* ---- Footer year ---- */
   document.getElementById('year').textContent = new Date().getFullYear();
