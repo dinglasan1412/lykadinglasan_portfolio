@@ -308,6 +308,7 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
 .field-error{display:block;color:var(--accent-2);font-size:.78rem;margin-top:6px;min-height:14px;}
 .submit-btn{width:100%;padding:15px;background:var(--gradient-accent);color:#fff;border-radius:10px;font-weight:600;font-size:.95rem;display:flex;align-items:center;justify-content:center;gap:9px;transition:var(--transition);}
 .submit-btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px var(--accent-glow);}
+.submit-btn:disabled{opacity:.7;cursor:not-allowed;transform:none;}
 .submit-btn.success{background:linear-gradient(135deg,#22c55e,#15803d);}
 
 /* ============================= */
@@ -670,25 +671,6 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
 
     <h3 class="sub-heading" style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px;">More Featured Work <span style="font-size:.82rem;font-weight:400;color:var(--text-muted);">Selected builds and experiments</span></h3>
     <div class="secondary-projects-grid">
-      
-      <div class="secondary-project reveal">
-        <div class="secondary-project-top">
-          <span class="badge-pill accent-line"></i>Business Management System</span>
-        </div>
-        <h3>Happy Sips Shop Management System</h3>
-        <div class="img-slot ratio-landscape" style="margin-bottom:18px;">
-          <img src="images/LabVIEW-Based_Function_Generator_and_Oscilloscope.png" alt="School RFID system screenshot" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-image"></i></div>
-        </div>
-        <p>Designed a comprehensive shop management system for a milk tea business, integrating point-of-sale operations, inventory monitoring, sales tracking, and user access management. The system features an administrative dashboard with sales analytics, low-stock alerts, product management, and role-based access for owners and staff.</p>
-        <div class="project-tags">
-          <span class="tag">LabVIEW</span><span class="tag">Signal Processing</span><span class="tag">Virtual Instrumentation</span><span class="tag">Data Acquisition</span>
-        </div>
-        <div class="project-buttons">
-          <a href="https://drive.google.com/drive/folders/1riUM1fDufBf4OeaSQjDF6vudCo6Odp9O?usp=sharing" target="_blank" class="btn btn-tinted btn-sm"><i class="fa-solid fa-arrow-up-right-from-square"></i>View Work</a>
-        </div>
-      </div>
-
       <div class="secondary-project reveal">
         <div class="secondary-project-top">
           <span class="badge-pill accent-line"></i>Virtual Instrumentation</span>
@@ -846,14 +828,11 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
     <h2 class="section-title reveal">Graphic Design Works</h2>
     <div class="gallery-grid" style="margin-top:36px;">
       <div class="gallery-item reveal"><div class="img-slot ratio-square"><img src="images/design_1.jpg" alt="SK Tapal Free Printing poster" onerror="this.style.display='none';"></div></div>
-      <div class="gallery-item reveal"><div class="img-slot ratio-square"><img src="images/design_2.jpg" alt="SK Tapal Free Printing poster" onerror="this.style.display='none';"></div></div>
-      <div class="gallery-item reveal"><div class="img-slot ratio-square"><img src="images/design_3.jpg" alt="SK Tapal Free Printing poster" onerror="this.style.display='none';"></div></div>
-      <div class="gallery-item reveal"><div class="img-slot ratio-square"><img src="images/design_4.jpg" alt="SK Tapal Free Printing poster" onerror="this.style.display='none';"></div></div>
-      <div class="gallery-item reveal"><div class="img-slot ratio-square"><img src="images/design_5.jpg" alt="SK Tapal Free Printing poster" onerror="this.style.display='none';"></div></div>
-      <div class="gallery-item reveal"><div class="img-slot ratio-square"><img src="images/design_6.jpg" alt="SK Tapal Free Printing poster" onerror="this.style.display='none';"></div></div>
-      <div class="gallery-item reveal"><div class="img-slot ratio-square"><img src="images/design_7.jpg" alt="SK Tapal Free Printing poster" onerror="this.style.display='none';"></div></div>
-      <div class="gallery-item reveal"><div class="img-slot ratio-square"><img src="images/design_8.jpg" alt="SK Tapal Free Printing poster" onerror="this.style.display='none';"></div></div>
-      <div class="gallery-item reveal"><div class="img-slot ratio-square"><img src="images/design_9.jpg" alt="SK Tapal Free Printing poster" onerror="this.style.display='none';"></div></div>
+      <div class="gallery-item reveal reveal-delay-1"><div class="img-slot ratio-square"><img src="images/design-02.jpg" alt="Pambahaghari Run poster" onerror="this.style.display='none';"></div></div>
+      <div class="gallery-item reveal reveal-delay-2"><div class="img-slot ratio-square"><img src="images/design-03.jpg" alt="Exhibition Game poster" onerror="this.style.display='none';"></div></div>
+      <div class="gallery-item reveal"><div class="img-slot ratio-square"><img src="images/design-04.jpg" alt="Agriculture campaign poster" onerror="this.style.display='none';"></div></div>
+      <div class="gallery-item reveal reveal-delay-1"><div class="img-slot ratio-square"><img src="images/design-05.jpg" alt="CCS Christmas Party poster" onerror="this.style.display='none';"></div></div>
+      <div class="gallery-item reveal reveal-delay-2"><div class="img-slot ratio-square"><img src="images/design-06.jpg" alt="Inter Barangay Tournament poster" onerror="this.style.display='none';"></div></div>
     </div>
   </section>
 
@@ -1240,15 +1219,44 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
       valid = false;
     }
 
-    if (valid) {
-      submitBtn.innerHTML = '<i class="fa-solid fa-check"></i>Message Sent!';
-      submitBtn.classList.add('success');
-      form.reset();
-      setTimeout(function(){
+    if (!valid) return;
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>Sending...';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        access_key: '3ca473e8-5b5c-4c85-83a1-5f08a21a92e7',
+        subject: 'New message from your portfolio site',
+        from_name: name.value.trim(),
+        name: name.value.trim(),
+        email: email.value.trim(),
+        message: message.value.trim()
+      })
+    })
+      .then(function(res){ return res.json(); })
+      .then(function(data){
+        submitBtn.disabled = false;
+        if (data.success) {
+          submitBtn.innerHTML = '<i class="fa-solid fa-check"></i>Message Sent!';
+          submitBtn.classList.add('success');
+          form.reset();
+          setTimeout(function(){
+            submitBtn.innerHTML = originalBtnHTML;
+            submitBtn.classList.remove('success');
+          }, 3000);
+        } else {
+          submitBtn.innerHTML = originalBtnHTML;
+          document.getElementById('messageError').textContent = 'Something went wrong. Please try again or email me directly.';
+        }
+      })
+      .catch(function(){
+        submitBtn.disabled = false;
         submitBtn.innerHTML = originalBtnHTML;
-        submitBtn.classList.remove('success');
-      }, 3000);
-    }
+        document.getElementById('messageError').textContent = 'Something went wrong. Please try again or email me directly.';
+      });
   });
 
   /* ---- Lightbox carousel ---- */
