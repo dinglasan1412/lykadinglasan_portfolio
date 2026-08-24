@@ -783,6 +783,16 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
           <span>Issued: August 2026</span>
         </div>
       </div>
+      <div class="cert-card cert-scroll-trigger reveal reveal-delay-2" id="Cybersecurity_Training_Workshop" data-title="Cybersecurity_Training_Workshop">
+        <div class="img-slot ratio-landscape">
+          <img src="images/Cybersecurity_Training_Workshop.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+        </div>
+        <div class="cert-card-body">
+          <h3>Cybersecurity Training Workshop</h3>
+          <span>Issued: October 2025</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1012,15 +1022,13 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
 </div>
 
 <!-- ============================= -->
-<!-- CERT SCROLL MODAL (Programming Prodigy Award) -->
-<!-- Placeholder content: reuses the Computer System Servicing NC II images -->
-<!-- until real Programming Prodigy Award certificate images are ready -->
+<!-- Computer System Servicing NC II -->
 <!-- ============================= -->
 <div class="cert-scroll-overlay" id="certScrollOverlay4">
   <div class="cert-scroll-panel" role="dialog" aria-modal="true" aria-label="Programming Prodigy Award certificates">
     <button class="lightbox-close" id="certScrollOverlay4" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
     <div class="cert-scroll-header">
-      <h3>Programming Prodigy Award</h3>
+      <h3>Computer System Servicing NC II</h3>
       <span>Placeholder images — scroll to preview the layout</span>
     </div>
     <div class="cert-scroll-list">
@@ -1059,6 +1067,29 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
         </div>
         <span class="cert-scroll-num">5 / 5</span>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================= -->
+<!-- Cybersecurity Training Workshop -->
+<!-- ============================= -->
+<div class="cert-scroll-overlay" id="certScrollOverlay5">
+  <div class="cert-scroll-panel" role="dialog" aria-modal="true" aria-label="Cybersecurity Training Workshop">
+    <button class="lightbox-close" id="certScrollClose5" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <div class="cert-scroll-header">
+      <h3>Cybersecurity Training Workshop</h3>
+      <span>Completed 12-Hour Cybersecurity Training Workshop — October 2025</span>
+    </div>
+    <div class="cert-scroll-list">
+      <div class="cert-scroll-item">
+        <div class="img-slot ratio-landscape">
+          <img src="images/Cybersecurity_Training_Workshop.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+        </div>
+        <span class="cert-scroll-num">1 / 1</span>
+      </div>
+    </div>
     </div>
   </div>
 </div>
@@ -1331,6 +1362,7 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
   initCertScroll('Safety_Officer_2', 'certScrollOverlay2', 'certScrollOverlay2');
   initCertScroll('Google_Cybersecurity_Certification', 'certScrollOverlay3', 'certScrollOverlay3');
   initCertScroll('Computer_System_Servicing_NC_II', 'certScrollOverlay4', 'certScrollOverlay4');
+  initCertScroll('Cybersecurity_Training_Workshop', 'certScrollOverlay5', 'certScrollOverlay5');
 
   /* ---- Footer year ---- */
   document.getElementById('year').textContent = new Date().getFullYear();
