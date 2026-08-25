@@ -108,9 +108,9 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
 /* image slot */
 .img-slot{position:relative;width:100%;overflow:hidden;border-radius:var(--radius-md);background:var(--bg-elevated);}
 .img-slot img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none;border-radius:inherit;}
-.img-placeholder{display:flex;position:absolute;inset:0;align-items:center;justify-content:center;flex-direction:column;gap:8px;background:linear-gradient(135deg,var(--bg-elevated),var(--bg-secondary));color:var(--text-muted);}
-.img-placeholder i{font-size:2rem;opacity:.6;}
-.img-slot.loaded .img-placeholder{display:none;}
+.image-box{display:flex;position:absolute;inset:0;align-items:center;justify-content:center;flex-direction:column;gap:8px;background:linear-gradient(135deg,var(--bg-elevated),var(--bg-secondary));color:var(--text-muted);}
+.image-box i{font-size:2rem;opacity:.6;}
+.img-slot.loaded .image-box{display:none;}
 .ratio-portrait{aspect-ratio:3/4;}
 .ratio-landscape{aspect-ratio:16/10;}
 .ratio-square{aspect-ratio:1/1;}
@@ -444,7 +444,7 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
         <div class="lyka-image-frame">
           <div class="img-slot ratio-portrait">
             <img src="images/lyka_dinglasan_photo.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="img-placeholder"><i class="fa-solid fa-user"></i></div>
+            <div class="image-box"><i class="fa-solid fa-user"></i></div>
           </div>
         </div>
       </div>
@@ -480,7 +480,7 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
       <div class="about-image-col reveal">
         <div class="img-slot ratio-portrait">
           <img src="images/lyka_dinglasan_about_me.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-user"></i></div>
+          <div class="image-box"><i class="fa-solid fa-user"></i></div>
         </div>
       </div>
       <div class="about-content reveal reveal-delay-1">
@@ -517,7 +517,7 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
         <p>Creative Director for IECEP Cavite Electronics Engineering Student Chapter</p>
         <div class="img-slot ratio-square">
           <img src="images/Leadership_1.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-image"></i></div>
+          <div class="image-box"><i class="fa-solid fa-image"></i></div>
         </div>
       </div>
       <div class="info-card-block reveal reveal-delay-1">
@@ -526,7 +526,7 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
         <p>Director of Publications for Jr. Institute of Electronics Engineers LPU – Cavite Student Chapter</p>
         <div class="img-slot ratio-square">
           <img src="images/Leadership_2.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-image"></i></div>
+          <div class="image-box"><i class="fa-solid fa-image"></i></div>
         </div>
       </div>
       <div class="info-card-block reveal reveal-delay-2">
@@ -535,7 +535,7 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
         <p>Member of the Creatives Committee for LPU Cavite - College of Engineering and Architecture</p>
         <div class="img-slot ratio-square">
           <img src="images/Leadership_3.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-image"></i></div>
+          <div class="image-box"><i class="fa-solid fa-image"></i></div>
         </div>
       </div>
     </div>
@@ -586,7 +586,7 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
     <div class="featured-project reveal">
       <div class="img-slot" style="aspect-ratio:4/3;">
         <img src="images/Alersense.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-        <div class="img-placeholder"><i class="fa-solid fa-leaf"></i></div>
+        <div class="image-box"><i class="fa-solid fa-leaf"></i></div>
       </div>
       <div class="featured-project-content">
         <div class="badge-row">
@@ -616,7 +616,7 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
         <h3>Milk Tea Shop POS and Inventory Management System</h3>
         <div class="img-slot ratio-landscape" style="margin-bottom:18px;">
           <img src="images/Milk_Tea_Shop_POS_and_Inventory_Management_System.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-image"></i></div>
+          <div class="image-box"><i class="fa-solid fa-image"></i></div>
         </div>
         <p>A full-stack milk tea shop management system featuring role-based authentication, point-of-sale transactions, inventory management, sales analytics, low-stock alerts, and account approval workflows. The system uses a React/Vite frontend with Vercel serverless functions and Upstash Redis for shared, persistent shop data.</p>
         <div class="project-tags">
@@ -634,7 +634,7 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
         <h3>LabVIEW-Based Function Generator and Oscilloscope</h3>
         <div class="img-slot ratio-landscape" style="margin-bottom:18px;">
           <img src="images/LabVIEW-Based_Function_Generator_and_Oscilloscope.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-image"></i></div>
+          <div class="image-box"><i class="fa-solid fa-image"></i></div>
         </div>
         <p>Designed and developed a virtual instrument in LabVIEW that generates sine, square, triangle, and sawtooth waveforms while providing real-time oscilloscope visualization. The system includes adjustable amplitude, frequency, phase, duty cycle, triggering, noise generation, waveform statistics, and image export for signal analysis and testing.</p>
         <div class="project-tags">
@@ -652,7 +652,7 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
         <h3>LabVIEW-Based Smart Home Energy Monitoring System</h3>
         <div class="img-slot ratio-landscape" style="margin-bottom:18px;">
           <img src="images/LabVIEW-Based_Smart_Home_Energy_Monitoring_System.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-image"></i></div>
+          <div class="image-box"><i class="fa-solid fa-image"></i></div>
         </div>
         <p>Developed a LabVIEW-based smart home application that monitors and controls household electrical loads, including lights, fans, and power outlets. The system provides real-time visualization of voltage, current, power, energy consumption, and appliance runtime through an interactive dashboard.</p>
         <div class="project-tags">
@@ -670,7 +670,7 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
         <h3>Cabling System for Call Center Building</h3>
         <div class="img-slot ratio-landscape" style="margin-bottom:18px;">
           <img src="images/Cabling_System_for_Call_Center_Building.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-image"></i></div>
+          <div class="image-box"><i class="fa-solid fa-image"></i></div>
         </div>
         <p>Designed a cabling infrastructure for a multi-story call center building, including site development plans, backbone and horizontal cabling layouts, telecommunications rooms, network device placement, and workstation connectivity. The design ensures reliable, scalable, and high-performance network infrastructure to support call center operations.</p>
         <div class="project-tags">
@@ -688,7 +688,7 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
         <h3>Smart Home Automation System</h3>
         <div class="img-slot ratio-landscape" style="margin-bottom:18px;">
           <img src="images/Smart_Home_Automation_System.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-image"></i></div>
+          <div class="image-box"><i class="fa-solid fa-image"></i></div>
         </div>
         <p>Designed and simulated an Internet of Things (IoT) smart home that integrates intelligent appliances, environmental sensors, renewable energy systems, and cloud connectivity. The system enables real-time monitoring and remote control of household devices through a centralized IoT platform, enhancing home automation, security, and energy efficiency.</p>
         <div class="project-tags">
@@ -706,7 +706,7 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
         <h3>Monostable Multivibrator Study Lamp</h3>
         <div class="img-slot ratio-landscape" style="margin-bottom:18px;">
           <img src="images/Monostable_Multivibrator_Study_Lamp.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-image"></i></div>
+          <div class="image-box"><i class="fa-solid fa-image"></i></div>
         </div>
         <p>Designed and built an electronic study lamp that incorporates a monostable multivibrator circuit to provide precisely timed illumination. The system automatically controls the lamp's operating duration, promoting improved study productivity while reducing unnecessary energy consumption.</p>
         <div class="project-tags">
@@ -724,7 +724,7 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
         <h3>PAM, PWM, and PPM Signal Generator</h3>
         <div class="img-slot ratio-landscape" style="margin-bottom:18px;">
           <img src="images/PAM_PWM_and_PPM_Signal_Generator.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-image"></i></div>
+          <div class="image-box"><i class="fa-solid fa-image"></i></div>
         </div>
         <p>Designed and fabricated a communications circuit capable of generating Pulse Amplitude Modulation (PAM), Pulse Width Modulation (PWM), and Pulse Position Modulation (PPM) signals. The project features a custom PCB designed in KiCad, NE555 timer-based signal generation, and a DIP switch interface for selecting modulation modes during testing and analysis.</p>
         <div class="project-tags">
@@ -747,7 +747,7 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
       <div class="cert-card cert-scroll-trigger reveal" id="TOEIC_Listening_and_Reading_Test" data-title="TOEIC Listening and Reading Test">
         <div class="img-slot ratio-landscape">
           <img src="images/TOEIC_Listening_and_Reading_Test.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+          <div class="image-box"><i class="fa-solid fa-certificate"></i></div>
         </div>
         <div class="cert-card-body">
           <h3>TOEIC Listening and Reading Test</h3>
@@ -757,7 +757,7 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
       <div class="cert-card cert-scroll-trigger reveal reveal-delay-1" id="Safety_Officer_2" data-title="Safety Officer 2">
         <div class="img-slot ratio-landscape">
           <img src="images/Safety_Officer_2.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+          <div class="image-box"><i class="fa-solid fa-certificate"></i></div>
         </div>
         <div class="cert-card-body">
           <h3>Safety Officer 2 (SO2) – BOSH Training</h3>
@@ -767,7 +767,7 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
       <div class="cert-card cert-scroll-trigger reveal reveal-delay-2" id="Cybersecurity_Training_Workshop" data-title="Cybersecurity_Training_Workshop">
         <div class="img-slot ratio-landscape">
           <img src="images/Cybersecurity_Training_Workshop.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+          <div class="image-box"><i class="fa-solid fa-certificate"></i></div>
         </div>
         <div class="cert-card-body">
           <h3>Cybersecurity Training Workshop</h3>
@@ -777,7 +777,7 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
       <div class="cert-card cert-scroll-trigger reveal reveal-delay-2" id="Google_Cybersecurity_Certification" data-title="Google Cybersecurity Certification">
         <div class="img-slot ratio-landscape">
           <img src="images/Google_Cybersecurity_Certification_1.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+          <div class="image-box"><i class="fa-solid fa-certificate"></i></div>
         </div>
         <div class="cert-card-body">
           <h3>Google Cybersecurity Certification</h3>
@@ -787,7 +787,7 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
       <div class="cert-card cert-scroll-trigger reveal reveal-delay-2" id="Computer_System_Servicing_NC_II" data-title="Computer_System_Servicing_NC_II">
         <div class="img-slot ratio-landscape">
           <img src="images/Computer_System_Servicing_NC_II_1.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+          <div class="image-box"><i class="fa-solid fa-certificate"></i></div>
         </div>
         <div class="cert-card-body">
           <h3>Computer System Servicing NC II</h3>
@@ -912,7 +912,7 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
       <div class="cert-scroll-item">
         <div class="img-slot ratio-landscape">
           <img src="images/TOEIC_Listening_and_Reading_Test.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+          <div class="image-box"><i class="fa-solid fa-certificate"></i></div>
         </div>
       </div>
     </div>
@@ -934,7 +934,7 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
       <div class="cert-scroll-item">
         <div class="img-slot ratio-landscape">
           <img src="images/Safety_Officer_2.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+          <div class="image-box"><i class="fa-solid fa-certificate"></i></div>
         </div>
       </div>
     </div>
@@ -956,7 +956,7 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
       <div class="cert-scroll-item">
         <div class="img-slot ratio-landscape">
           <img src="images/Cybersecurity_Training_Workshop.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+          <div class="image-box"><i class="fa-solid fa-certificate"></i></div>
         </div>
       </div>
     </div>
@@ -978,63 +978,63 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
       <div class="cert-scroll-item">
         <div class="img-slot ratio-landscape">
           <img src="images/Google_Cybersecurity_Certification_1.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+          <div class="image-box"><i class="fa-solid fa-certificate"></i></div>
         </div>
         <span class="cert-scroll-num">1 / 9</span>
       </div>
       <div class="cert-scroll-item">
         <div class="img-slot ratio-landscape">
           <img src="images/Google_Cybersecurity_Certification_2.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+          <div class="image-box"><i class="fa-solid fa-certificate"></i></div>
         </div>
         <span class="cert-scroll-num">2 / 9</span>
       </div>
       <div class="cert-scroll-item">
         <div class="img-slot ratio-landscape">
           <img src="images/Google_Cybersecurity_Certification_3.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+          <div class="image-box"><i class="fa-solid fa-certificate"></i></div>
         </div>
         <span class="cert-scroll-num">3 / 9</span>
       </div>
       <div class="cert-scroll-item">
         <div class="img-slot ratio-landscape">
           <img src="images/Google_Cybersecurity_Certification_4.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+          <div class="image-box"><i class="fa-solid fa-certificate"></i></div>
         </div>
         <span class="cert-scroll-num">4 / 9</span>
       </div>
       <div class="cert-scroll-item">
         <div class="img-slot ratio-landscape">
           <img src="images/Google_Cybersecurity_Certification_5.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+          <div class="image-box"><i class="fa-solid fa-certificate"></i></div>
         </div>
         <span class="cert-scroll-num">5 / 9</span>
       </div>
       <div class="cert-scroll-item">
         <div class="img-slot ratio-landscape">
           <img src="images/Google_Cybersecurity_Certification_6.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+          <div class="image-box"><i class="fa-solid fa-certificate"></i></div>
         </div>
         <span class="cert-scroll-num">6 / 9</span>
       </div>
       <div class="cert-scroll-item">
         <div class="img-slot ratio-landscape">
           <img src="images/Google_Cybersecurity_Certification_7.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+          <div class="image-box"><i class="fa-solid fa-certificate"></i></div>
         </div>
         <span class="cert-scroll-num">7 / 9</span>
       </div>
       <div class="cert-scroll-item">
         <div class="img-slot ratio-landscape">
           <img src="images/Google_Cybersecurity_Certification_8.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+          <div class="image-box"><i class="fa-solid fa-certificate"></i></div>
         </div>
         <span class="cert-scroll-num">8 / 9</span>
       </div>
       <div class="cert-scroll-item">
         <div class="img-slot ratio-landscape">
           <img src="images/Google_Cybersecurity_Certification_9.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+          <div class="image-box"><i class="fa-solid fa-certificate"></i></div>
         </div>
         <span class="cert-scroll-num">9 / 9</span>
       </div>
@@ -1056,35 +1056,35 @@ section{padding:110px 24px;max-width:1200px;margin:0 auto;position:relative;}
       <div class="cert-scroll-item">
         <div class="img-slot ratio-landscape">
           <img src="images/Computer_System_Servicing_NC_II_1.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+          <div class="image-box"><i class="fa-solid fa-certificate"></i></div>
         </div>
         <span class="cert-scroll-num">1 / 5</span>
       </div>
       <div class="cert-scroll-item">
         <div class="img-slot ratio-landscape">
           <img src="images/Computer_System_Servicing_NC_II_2.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+          <div class="image-box"><i class="fa-solid fa-certificate"></i></div>
         </div>
         <span class="cert-scroll-num">2 / 5</span>
       </div>
       <div class="cert-scroll-item">
         <div class="img-slot ratio-landscape">
           <img src="images/Computer_System_Servicing_NC_II_3.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+          <div class="image-box"><i class="fa-solid fa-certificate"></i></div>
         </div>
         <span class="cert-scroll-num">3 / 5</span>
       </div>
       <div class="cert-scroll-item">
         <div class="img-slot ratio-landscape">
           <img src="images/Computer_System_Servicing_NC_II_4.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+          <div class="image-box"><i class="fa-solid fa-certificate"></i></div>
         </div>
         <span class="cert-scroll-num">4 / 5</span>
       </div>
       <div class="cert-scroll-item">
         <div class="img-slot ratio-landscape">
           <img src="images/Computer_System_Servicing_NC_II_5.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="img-placeholder"><i class="fa-solid fa-certificate"></i></div>
+          <div class="image-box"><i class="fa-solid fa-certificate"></i></div>
         </div>
         <span class="cert-scroll-num">5 / 5</span>
       </div>
